@@ -1,20 +1,13 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
-//import CssBaseline from '@mui/material/CssBaseline';
-//import Card from '@mui/material/Card';
-//import Paper from '@mui/material/Paper';
 import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-import AppBar from '@mui/material/AppBar';
-// import { makeStyles } from "@mui/styles";
-//import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
-import RoofingOutlinedIcon from '@mui/icons-material/RoofingOutlined';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import CodeIcon from '@mui/icons-material/Code';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
+
+import NavBar from './NavBar';
+import Footer from './Footer';
 
 
 // const useStyles = makeStyles(() => ({
@@ -44,7 +37,6 @@ const Item = styled(Card)(({ theme }) => ({
 function Home(){
     // const classes = useStyles();
     return (
-
       
         <Box className="home-container" backgroundColor="#141314" display="flex" flexDirection="row">
         {/* sx={{ flexGrow: 1 }} */}
@@ -53,49 +45,9 @@ function Home(){
         {/* 
         LEFT NAV BAR 
         */}
-        {/* <Box display="flex" flexDirection="row" > */}
         <Box flexGrow={0} backgroundColor="#1d1b1d">
-
-          <AppBar position="sticky" color="white">
-            <Grid container spacing={5} className="navbar-container" margin="30px" paddingTop="10px" justifyContent="center">
-              <Grid display="flex" flexDirection="column"  alignItems="center">
-                <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents" color="white">
-                  <RoofingOutlinedIcon />
-                  <Typography sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: 'smaller', fontWeight: '400', color:"#fff" }}>
-                    Home
-                  </Typography>  
-                </Link>
-              </Grid>
-              {/* <InfoRoundedIcon/> */}
-              <Grid display="flex" flexDirection="column"  alignItems="center">
-                <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents" color="white">
-                  <InfoOutlinedIcon/>
-                  <Typography sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: 'smaller', fontWeight: '400', color:"#fff" }}>
-                    About
-                  </Typography>  
-                </Link>
-              </Grid>
-              <Grid display="flex" flexDirection="column"  alignItems="center">
-                <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents" color="white">
-                  <CodeIcon/>
-                  <Typography sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: 'smaller', fontWeight: '400', color:"#fff" }}>
-                    Projects
-                  </Typography>  
-                </Link>
-              </Grid>
-              <Grid display="flex" flexDirection="column"  alignItems="center">
-                <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents" color="white">
-                  <WorkOutlineOutlinedIcon/>
-                  <Typography sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: 'smaller', fontWeight: '400', color:"#fff" }}>
-                    Work
-                  </Typography>  
-                </Link>
-              </Grid>
-            </Grid>
-          </AppBar>
+          <NavBar />
         </Box>
-        {/* </Box> */}
-
 
         {/* 
         MAIN CONTENT AREA 
@@ -111,14 +63,14 @@ function Home(){
             <Grid size={{sm: 12, md: 6 }} display="flex" className="title-container" > 
             {/* display="flex" */}
             {/* the view is split into 12, so 6 means half the view */}
-              <Item height="100%" className="title-wrapper">
-              <Typography variant="h1" sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: '7rem', fontWeight: '400', color:"#fff" }}>
+              <Item height="100%" className="title-wrapper" >
+              <Typography padding="20px" variant="h1" sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: '7rem', fontWeight: '400', color:"#fff" }}>
                 Huong Nguyen
               </Typography>                
-              <Typography variant="h6" sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontWeight: '200', color:"#fff" }} className="description">
+              <Typography padding="20px" variant="h6" sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontWeight: '200', color:"#fff" }} className="description">
                 Huong N. is a full stack developer who enjoys making kick ass apps. Develop and enjoy beautiful, usable products with Huong's expertise.
               </Typography>
-              <Button href="https://www.linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" variant="contained" sx={ { borderRadius: 28, color:'black', backgroundColor: '#A67AFE', fontFamily: 'Roboto, Arial, sans-serif' }}>Get started</Button>
+              <Button href="https://www.linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" variant="contained" sx={ { borderRadius: 28, color:'black', backgroundColor: '#A67AFE', fontFamily: 'Roboto, Arial, sans-serif' }}>Linkedin</Button>
 
               </Item>
             </Grid>
@@ -128,7 +80,7 @@ function Home(){
                 {/* Create-react-app uses webpack under the hood so make sure you do src correctly */}
                 {/* <img src={require('./mommy.jpg')} alt="mommy's lil monster" width="600" height="600"></img> */}
                 <video autoPlay muted loop width="100%" height="100%" objectfit="contain" >
-                    <source src={require("./materialdesign.mp4")} type="video/mp4"></source>
+                    <source src={require("./media/materialdesign.mp4")} type="video/mp4"></source>
                     Your browser does not support the video tag.
                 </video>
               </Item>
@@ -150,7 +102,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' > 
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents"> 
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg1.png')} alt="green pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg1.png')} alt="green pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%" >
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -166,7 +118,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg2.png')} alt="green g pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg2.png')} alt="green g pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%">
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -181,7 +133,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4}} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">  
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg3.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg3.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%">
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -216,7 +168,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' > 
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents"> 
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg4.png')} alt="green pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg4.png')} alt="green pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%" >
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -232,7 +184,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg5.png')} alt="green g pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg5.png')} alt="green g pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%">
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -247,7 +199,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4}} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">  
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg6.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg6.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%">
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -263,7 +215,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' > 
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents"> 
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg7.png')} alt="green pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg7.png')} alt="green pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%" >
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -279,7 +231,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg8.png')} alt="green g pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg8.png')} alt="green g pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%">
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -294,7 +246,7 @@ function Home(){
               <Grid size={{xs: 12, sm: 6, md: 4}} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
               <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">  
                 <Item height="100%" width="100%">
-                  <img src={require('./contentimg9.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
+                  <img src={require('./media/contentimg9.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
                 </Item>
                 <Box padding="10px" margin="5%">
                   <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
@@ -315,8 +267,13 @@ function Home(){
           {/* 
           Footer 
           */}
+          < Footer/>
+          
           </Box>
-          <Box className="home-footer"></Box>
+          
+
+
+          
         </Box>
       );
 }
