@@ -4,10 +4,14 @@ import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
+//import Link from '@mui/material/Link';
+//import Paper from '@mui/material/Paper';
+//import Carousel from 'react-material-ui-carousel';
 
-import NavBar from './NavBar';
+//import NavBar from './NavBar';
 import Footer from './Footer';
+import About from './About'
+import Projects from './Projects';
 
 
 // const useStyles = makeStyles(() => ({
@@ -36,6 +40,8 @@ const Item = styled(Card)(({ theme }) => ({
 
 function Home(){
     // const classes = useStyles();
+
+    
     return (
       
         <Box className="home-container" backgroundColor="#141314" display="flex" flexDirection="row">
@@ -45,9 +51,9 @@ function Home(){
         {/* 
         LEFT NAV BAR 
         */}
-        <Box flexGrow={0} backgroundColor="#1d1b1d">
+        {/* <Box flexGrow={0} backgroundColor="#1d1b1d">
           <NavBar />
-        </Box>
+        </Box> */}
 
         {/* 
         MAIN CONTENT AREA 
@@ -68,7 +74,7 @@ function Home(){
                 Huong Nguyen
               </Typography>                
               <Typography padding="20px" variant="h6" sx={{ fontFamily: 'Roboto, Arial, sans-serif', fontWeight: '200', color:"#fff" }} className="description">
-                Huong N. is a full stack developer who enjoys making kick ass apps. Develop and enjoy beautiful, usable products with Huong's expertise.
+                Huong N. is a software engineer who enjoys making kick ass apps. Develop and enjoy beautiful, usable products with Huong's expertise.
               </Typography>
               <Button href="https://www.linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" variant="contained" sx={ { borderRadius: 28, color:'black', backgroundColor: '#A67AFE', fontFamily: 'Roboto, Arial, sans-serif' }}>Linkedin</Button>
 
@@ -92,61 +98,7 @@ function Home(){
           Content 
           */}
           <Box className="home-content-container" width="90%" margin="auto" padding="20px">
-            <Box className="content-section">
-            <Box className="section-header" paddingTop="50px" paddingBottom="25px">
-              <Typography variant="h2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                News & launches 
-              </Typography>
-            </Box>
-            <Grid container spacing={1} className="content-cardset-container" >
-              <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' > 
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents"> 
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg1.png')} alt="green pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%" >
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    Material Design at Google
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  Learn more about the latest version of Google's open-source design system
-                  </Typography>
-                </Box>
-                </Link>
-
-              </Grid>
-              <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg2.png')} alt="green g pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%">
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    How to get Google Fonts
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  New API updates and website upgrades make font integraation easier than ever
-                  </Typography>
-                </Box>
-              </Link>
-              </Grid>
-              <Grid size={{xs: 12, sm: 6, md: 4}} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">  
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg3.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%">
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    Figma design kit
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  Start designing and prototyping with the complete M3 library of ready-made components 
-                  </Typography>
-                </Box>
-              </Link>
-              </Grid>
-            </Grid>
-            </Box>
+            <About/>
           </Box>
 
 
@@ -154,128 +106,31 @@ function Home(){
 
 
           {/* Extra Content */}
-          {/* 
-          Content 
-          */}
-          <Box className="home-content-container" width="90%" margin="auto" padding="20px">
-            <Box className="content-section">
-            <Box className="section-header" paddingTop="50px" paddingBottom="25px">
-              <Typography variant="h2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                Design system updates 
-              </Typography>
-            </Box>
-            <Grid container spacing={1} className="content-cardset-container" >
-              <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' > 
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents"> 
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg4.png')} alt="green pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%" >
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    Material Design at Google
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  Learn more about the latest version of Google's open-source design system
-                  </Typography>
-                </Box>
-                </Link>
-
-              </Grid>
-              <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg5.png')} alt="green g pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%">
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    How to get Google Fonts
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  New API updates and website upgrades make font integraation easier than ever
-                  </Typography>
-                </Box>
-              </Link>
-              </Grid>
-              <Grid size={{xs: 12, sm: 6, md: 4}} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">  
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg6.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%">
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    Figma design kit
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  Start designing and prototyping with the complete M3 library of ready-made components 
-                  </Typography>
-                </Box>
-              </Link>
-              </Grid>
-              {/* 2nd row */}
-              <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' > 
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents"> 
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg7.png')} alt="green pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%" >
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    Material Design at Google
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  Learn more about the latest version of Google's open-source design system
-                  </Typography>
-                </Box>
-                </Link>
-
-              </Grid>
-              <Grid size={{xs: 12, sm: 6, md: 4 }} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg8.png')} alt="green g pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%">
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    How to get Google Fonts
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  New API updates and website upgrades make font integraation easier than ever
-                  </Typography>
-                </Box>
-              </Link>
-              </Grid>
-              <Grid size={{xs: 12, sm: 6, md: 4}} borderRadius="20px" display="flex" flexDirection="column" backgroundColor='#1d1b1d' >
-              <Link href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer" underline="none" display="contents">  
-                <Item height="100%" width="100%">
-                  <img src={require('./media/contentimg9.png')} alt="purple 3 pattern 1" width="100%" height="100%"></img>
-                </Item>
-                <Box padding="10px" margin="5%">
-                  <Typography paddingBottom="5px" variant="h5" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
-                    Figma design kit
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '300', color:"#fff"}}>
-                  Start designing and prototyping with the complete M3 library of ready-made components 
-                  </Typography>
-                </Box>
-              </Link>
-              </Grid>
-
-            </Grid>
-            </Box>
+          <Box className="projects" width="90%" margin="auto" padding="20px" >
+            <Projects/>
           </Box>
+          
+
+          {/* Contact Form */}
+          <Box className="contact" width="90%" margin="auto" padding="20px" >
+            <Box className="contact-header" paddingTop="50px" paddingBottom="25px">
+                <Typography  variant="h2" sx={{ fontFamily: 'Roboto, Arial, sans-serif',  fontWeight: '400', color:"#fff"}}>
+                  Get in touch
+                </Typography>
+              </Box>
+          </Box>
+          
 
 
           {/* 
           Footer 
           */}
-          < Footer/>
-          
+          < Footer/>          
           </Box>
-          
-
-
-          
         </Box>
       );
 }
+
+
 
 export default Home;

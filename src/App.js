@@ -1,46 +1,28 @@
 // import logo from './logo.svg';
 // import React from 'react';
 import './App.css';
+import {Routes, Route, Link} from 'react-router-dom';
 import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import NavBar from "./components/NavBar"
+
 
 function App() {
   return (
     <div>
-      {/* <NavBar/> */}
-      <Home />
       
-      {/* <div fs-scrolldisable-element="smart-nav">
-        <div className="Navbar-container">
-          <a 
-            className="Linkedin-link"
-            href="https://linkedin.com/in/htn5400"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            huong nguyen 
-          </a>
-          <nav>
-            <a href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer">home</a>
-            <a href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer">projects</a>
-            <a href="https://linkedin.com/in/htn5400" target="_blank" rel="noopener noreferrer">work</a>
-          </nav>
-          <a href="https://linkedin.com/in/htn5400">Grab my resume</a>
-          <div>
-            <div>
-
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-
-
-      {/* <header className="App-header">
-        <p>HUONG NGUYEN</p>
-      </header>
-      <div>
-        <p>MY PORTFOLIO</p>
-      </div> */}
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/projects" element={<Projects/>} />
+        <Route path="/contact" element={<Contact/>} />
+      </Routes>
+      
+      
+     
     </div>
   );
 }
